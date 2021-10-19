@@ -1,7 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Login from './components/Login.js'
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <Login />
   );
 }
 
