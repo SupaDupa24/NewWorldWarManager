@@ -14,4 +14,18 @@ router.get('/', async (req, res, next) => {
 	}
 })
 
+router.post('/', async (req, res, next) => {
+	const data = req.body;
+
+	const hash = bcrypt.hashSync(data.password, 12);
+	data.password = hash;
+
+	try {
+		const savedData = await Users.addUser(data);
+		res.status(201).json(savedData);
+	} catch (err) {
+		next(err);
+	}
+});
+
 module.exports = router;
