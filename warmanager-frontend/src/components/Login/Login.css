@@ -7,10 +7,21 @@
 
 }
 
+form {
+    display: flex;
+    align-items: center;
+}
+
+.form-side {
+    flex: 0 0 50%;
+    padding: 10px;    
+}
+
 h1 {
     color: white;
 }
 .form-wrapper {
+    background-color: white;
     border: 1px solid black;
 }
 
@@ -23,5 +34,4 @@ html {
     /* IE */
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_bg_2.jpg', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_bg_2.jpg', sizingMethod='scale')";
-
 }

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Users = require('./user-model');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const {jwtSecret} = require('../config/secret.js');
+const { jwtSecret } = require('../config/secret.js');
 
 router.get('/', async (req, res, next) => {
 
@@ -16,10 +16,8 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
 	const data = req.body;
-
 	const hash = bcrypt.hashSync(data.password, 12);
 	data.password = hash;
-
 	try {
 		const savedData = await Users.addUser(data);
 		res.status(201).json(savedData);
@@ -27,6 +25,19 @@ router.post('/', async (req, res, next) => {
 		next(err);
 	}
 });
+
+//----------- POSTMAN POST REQUEST FOR ADDING USERS EXAMPLE --------------//
+/*
+POST: localhost:3300/api/auth/
+Body -> Raw -> Select JSON not text
+Body:
+	{
+    "username": "doe",
+    "email": "jode@joe.com",
+    "password": "joe"
+	}
+*/
+//----------------------------------------------------------------------//
 
 router.post('/login', async (req, res, next) => {
 	let {
@@ -67,10 +78,10 @@ router.put('/:id', async (req, res, next) => {
 				res.status(404).json({
 					mes: 'invalid id'
 				});
-			} 
-		}	catch (err) {
-				next(err);
-		};		
+			}
+		} catch (err) {
+			next(err);
+		};
 	} else {
 		try {
 			const hash = bcrypt.hashSync(changes.password);
@@ -82,9 +93,9 @@ router.put('/:id', async (req, res, next) => {
 				res.status(404).json({
 					mes: 'invalid id'
 				});
-			} 
-		}	catch (err) {
-				next(err);
+			}
+		} catch (err) {
+			next(err);
 		};
 	}
 
@@ -92,17 +103,17 @@ router.put('/:id', async (req, res, next) => {
 
 
 function createToken(user) {
-  const payload = {
-      subject: user.id,
-      username: user.username,
-  }
+	const payload = {
+		subject: user.id,
+		username: user.username,
+	}
 
-  const secret = jwtSecret;
+	const secret = jwtSecret;
 
-  const options = {
-      expiresIn: '2h'
-  }
-  return jwt.sign(payload, secret, options)
+	const options = {
+		expiresIn: '2h'
+	}
+	return jwt.sign(payload, secret, options)
 }
 
 module.exports = router;

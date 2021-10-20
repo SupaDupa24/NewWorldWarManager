@@ -5,8 +5,6 @@ import {
     NavLink,
     Bars,
     NavMenu,
-    NavBtn,
-    NavBtnLink,
 } from "./NavbarElements";
 
 const Navbar = () => {
@@ -28,12 +26,9 @@ const Navbar = () => {
                 <NavLink to="/contact" activeStyle>
                     Contact
                 </NavLink>
-                <NavLink to="/signin" activeStyle>
-                    Sign In
+                <NavLink to="/signout" onClick={e => console.log('fix signout button')} activeStyle>
+                    Sign Out
                 </NavLink>
-                <NavBtn>
-                    <NavBtnLink to="/sign-up">Sign Up</NavBtnLink>                
-                </NavBtn>
             </NavMenu> 
            </Nav> 
         </>
