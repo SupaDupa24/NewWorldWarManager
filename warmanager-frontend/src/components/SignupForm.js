@@ -12,5 +12,7 @@ const SignupForm = props => {
     );
 }
 
+//http://localhost:3300/api/auth
+
 export default SignupForm;
 

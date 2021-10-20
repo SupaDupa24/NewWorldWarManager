@@ -1,3 +1,3 @@
 module.exports = {
-    jwtSecret:'New World War Successfull'
+    jwtSecret:'New World War Successful'
 }

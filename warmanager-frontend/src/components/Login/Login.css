@@ -1,0 +1,27 @@
+.login-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+h1 {
+    color: white;
+}
+.form-wrapper {
+    border: 1px solid black;
+}
+
+html { 
+    background: url(../images/login-art.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* IE */
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_bg_2.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/main_bg_2.jpg', sizingMethod='scale')";
+
+}
