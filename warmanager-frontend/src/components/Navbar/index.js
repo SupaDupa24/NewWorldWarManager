@@ -15,7 +15,6 @@ const Navbar = () => {
                 Logo
             </NavLogo>
             <Bars />
-
             <NavMenu>
                 <NavLink to="/" activeStyle>
                     Home

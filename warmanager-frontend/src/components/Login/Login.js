@@ -15,8 +15,9 @@ async function loginUser(credentials) {
 
 //The Component
 export default function Login({ setToken }) {
-    const [username, setUserName] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -24,14 +25,20 @@ export default function Login({ setToken }) {
             username,
             password
         });
-        setToken(token);
-        console.log(token)
-        sessionStorage.setItem("token", token.token)
+
+        if (!token.token) {
+            console.log('No token created');
+
+        } else {
+            console.log('Token created');
+            setToken(token);
+            sessionStorage.setItem("token", token.token);
+        }
     }
 
     function signUp() {
         return (
-            console.log(this.state.username)
+            console.log('sign up clicked')
         );
     }
 
@@ -43,11 +50,11 @@ export default function Login({ setToken }) {
                     <div className="form-side">
                         <label>
                             <p>UserName</p>
-                            <input type="text" placeholder="Username" onChange={e => setUserName(e.target.value)} />
+                            <input type="text" id="username" placeholder="ZodBlaze01" required onChange={e => setUserName(e.target.value)} />
                         </label>
                         <label>
                             <p>Password</p>
-                            <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+                            <input type="password" placeholder="DoomSlayer92" required onChange={e => setPassword(e.target.value)} />
                         </label>
                         <div>
                             <button type="submit">Log In</button>
