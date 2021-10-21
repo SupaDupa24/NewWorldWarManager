@@ -4,7 +4,12 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
 
+.wrongLogIn {
+    color: red;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 form {

@@ -17,6 +17,7 @@ async function loginUser(credentials) {
 export default function Login({ setToken }) {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [wronglogin, setWrongLogIn] = useState('');
 
 
     const handleSubmit = async e => {
@@ -28,6 +29,7 @@ export default function Login({ setToken }) {
 
         if (!token.token) {
             console.log('No token created');
+            setWrongLogIn('Invalid Log In');
 
         } else {
             console.log('Token created');
@@ -46,6 +48,7 @@ export default function Login({ setToken }) {
         <div className="login-wrapper">
             <h1>Welcome to New World War Manager!</h1>
             <div className="form-wrapper">
+                <div className="wrongLogIn">{wronglogin}</div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-side">
                         <label>
