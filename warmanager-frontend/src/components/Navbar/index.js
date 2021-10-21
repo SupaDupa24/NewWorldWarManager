@@ -9,8 +9,7 @@ import {
 
 const Navbar = () => {
     function signedOut() {
-        sessionStorage.clear();
-        //REFRESH THE PAGE OR SOMETHING 
+        sessionStorage.clear()
     }
     return (
         <>
@@ -29,7 +28,7 @@ const Navbar = () => {
                     <NavLink to="/contact" activeStyle>
                         Contact
                     </NavLink>
-                    <NavLink to="/signout" onClick={signedOut} activeStyle>
+                    <NavLink to="/login" onClick={signedOut} activeStyle>
                         Sign Out
                     </NavLink>
                 </NavMenu>
