@@ -28,7 +28,7 @@ const Navbar = () => {
                     <NavLink to="/contact" activeStyle>
                         Contact
                     </NavLink>
-                    <NavLink to="/login" onClick={signedOut} activeStyle>
+                    <NavLink to="/" onClick={signedOut} activeStyle>
                         Sign Out
                     </NavLink>
                 </NavMenu>
