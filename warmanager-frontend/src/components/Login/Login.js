@@ -13,7 +13,7 @@ async function loginUser(credentials) {
         .then(data => data.json())
 }
 
-
+//The Component
 export default function Login({ setToken }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
@@ -29,8 +29,8 @@ export default function Login({ setToken }) {
 
     function signUp() {
         return (
-            console.log('sign up clicked')
-            
+            console.log(this.state.username)
+
         );
     }
 
