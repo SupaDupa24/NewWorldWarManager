@@ -26,7 +26,6 @@ export default function Login({ setToken }) {
             username,
             password
         });
-
         if (!token.token) {
             console.log('No token created');
             setWrongLogIn('Invalid Log In');
@@ -34,7 +33,6 @@ export default function Login({ setToken }) {
         } else {
             console.log('Token created');
             setToken(token);
-            sessionStorage.setItem("token", token.token);
         }
     }
 
