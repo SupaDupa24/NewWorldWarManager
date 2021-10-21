@@ -32,7 +32,6 @@ export default function Login({ setToken }) {
     function signUp() {
         return (
             console.log(this.state.username)
-
         );
     }
 
