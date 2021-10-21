@@ -6,7 +6,7 @@ const Login = props => {
 
             <h1>Welcome to New World War Manager!</h1>
             <div className style={{ padding: "5%" }}>
-                <form style={{backgroundColor: "blue"}}>
+                <form style={{backgroundColor: "lightblue"}, {display: "inline-block"}, {padding: "5%"}}>
                     <input style={{margin: ".5%"}} type="text" placeholder="Username"></input><br />
                     <input style={{margin: ".5%"}} type="password" placeholder="Password"></input><br />
                     <button type="submit">Log In</button>
