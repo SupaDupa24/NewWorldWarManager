@@ -25,6 +25,8 @@ export default function Login({ setToken }) {
             password
         });
         setToken(token);
+        console.log(token)
+        sessionStorage.setItem("token", token.token)
     }
 
     function signUp() {
