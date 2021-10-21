@@ -1,6 +1,5 @@
-@import-normalize; /* bring in normalize.css styles */
 
 /* rest of app styles */
-#usrLogin {
+.usrlogin {
     padding: 5%;
 }
